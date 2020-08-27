@@ -1,0 +1,232 @@
+/* ******************** */
+/* CSS RESETS START */
+/* ******************** */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  /* border: 1px red solid; */
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* ******************** */
+/* CSS VARIABLES */
+/* ******************** */
+:root {
+  --dark-blue: hsl(217, 19%, 35%);
+  --blue: hsl(214, 17%, 51%);
+  --grayish-blue: hsl(212, 23%, 69%);
+  --light-blue: hsl(210, 46%, 95%);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--dark-blue);
+}
+
+body {
+  font-family: 'Manrope', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  background-color: var(--light-blue);
+  color: var(--blue);
+}
+
+/* ******************** */
+/* MAIN CSS */
+/* ******************** */
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 95vh;
+  width: 730px;
+  margin: auto;
+}
+
+.flex-container {
+  height: 280px;
+  display: flex;
+  border-radius: 50px;
+}
+
+/* LEFT */
+.image-div {
+  box-shadow: 7px 7px 15px 0px rgba(50, 50, 50, 0.3);
+  min-width: 280px;
+  border-radius: 10px 0 0 10px;
+  overflow: hidden;
+}
+
+.image-div img {
+  height: 280px;
+}
+
+/* RIGHT */
+.main-content {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  position: relative;
+  padding: 0 45px 0 40px;
+  border-radius: 0 10px 10px 0;
+  background-color: white;
+  box-shadow: 7px 7px 15px 0px rgba(50, 50, 50, 0.3);
+}
+
+.personal-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.avatar-and-name {
+  display: flex;
+}
+
+img.avatar {
+  width: 40px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+/* SOCIALS */
+.share-icon {
+  background-color: var(--light-blue);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 2px;
+}
+
+.open,
+.open path {
+  fill: var(--light-blue);
+  background-color: var(--blue);
+}
+
+.socials-container {
+  display: none;
+  position: absolute;
+  margin: 0;
+  font-weight: 500;
+  letter-spacing: 6px;
+  color: var(--blue);
+}
+
+.show {
+  display: none;
+}
+
+.socials {
+  background-color: var(--dark-blue);
+  position: absolute;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  left: 210px;
+  top: -105px;
+
+  border-radius: 12px;
+  width: 250px;
+  height: 55px;
+  padding-left: 18px;
+}
+
+.socials:after {
+  position: absolute;
+  content: '';
+  border: 15px solid transparent;
+  border-top-color: var(--dark-blue);
+  top: 55px;
+}
+
+.show {
+  display: block;
+}
+
+/* ATTRIBUTION */
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media only screen and (max-width: 375px) {
+  main {
+    height: 700px;
+    width: 328px;
+    margin-top: 72px;
+    margin: auto;
+  }
+  .flex-container {
+    flex-direction: column;
+    width: 328px;
+    height: 500px;
+  }
+
+  .image-div {
+    /* width: 350px; */
+    height: 235px;
+    overflow: hidden;
+    border-radius: 10px 10px 0 0;
+  }
+
+  .main-content {
+    padding-top: 30px;
+    padding-left: 30px;
+    padding-right: 40px;
+    border-radius: 0 0 10px 10px;
+  }
+
+  h2 {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .personal-info {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .share-icon {
+    z-index: 999;
+  }
+
+  .socials {
+    left: -30px;
+    top: -30px;
+    border-radius: 0 0 10px 10px;
+    height: 70px;
+    width: 328px;
+    padding-right: 100px;
+  }
+
+  .socials:after {
+    display: none;
+  }
+}
